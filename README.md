@@ -1,8 +1,8 @@
-# AgroLens — Tomato Disease Detection
+# AgroLens:Tomato Disease Detection
 
 Mobile app that detects tomato leaf disease (Early Blight, Late Blight,
-Leaf Mold, or Healthy) using **VGG16** for feature extraction and
-**SVM** for classification, matching your project proposal.
+Leaf Mold, or Healthy) using VGG16 for feature extraction and
+SVM for classification.
 
 ```
 AgroLens/
@@ -132,3 +132,4 @@ Auth uses `Authorization: Bearer <token>` header, issued at login/signup.
 - Dataset split: 80% train / 20% test (`train_test_split`, stratified) in `train_model.py`.
 - Evaluation metrics (precision, recall, F1, accuracy) print automatically after training, matching proposal section 3.3.5.
 - SQLite is used for simplicity during development; swap `database.py` for Firebase/Postgres later without touching `app.py`'s route logic much.
+            
