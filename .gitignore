@@ -1,0 +1,34 @@
+# Node / Expo
+node_modules/
+.expo/
+dist/
+web-build/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+.venv/
+
+# Database
+*.db
+*.sqlite3
+
+# Uploaded scan images
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Environment secrets
+.env
+.env.local
+
+# OS
+.DS_Store
+
+# Training data (too large for GitHub, not source code)
+backend/dataset/
+backend/dataset_npz/
+backend/models/*.pkl
+backend/models/*.h5
