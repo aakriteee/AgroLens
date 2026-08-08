@@ -1,35 +1,4 @@
-"""
-train_model.py
-----------------
-One-time (or whenever you refresh the dataset) training script.
 
-What it does, matching proposal section 3.3:
-  1. Reads leaf images from backend/dataset/<ClassName>/*.jpg
-  2. Preprocesses each image the same way as prediction time
-  3. Runs them through VGG16 (no top layer) to get 512-d feature vectors
-  4. Trains an SVM (RBF kernel) on those features
-  5. Saves the trained SVM + label encoder to disk so the Flask app
-     (via models/vgg16_svm.py) can load them instantly at request time
-     without retraining.
-
-Expected dataset folder layout (Plant Village style, as in proposal
-Table 3.3.2):
-
-    backend/dataset/
-        Healthy/
-            img001.jpg
-            img002.jpg
-            ...
-        Early_Blight/
-            ...
-        Late_Blight/
-            ...
-        Leaf_Mold/
-            ...
-
-Run from the backend/ folder:
-    python models/train_model.py
-"""
 
 import os
 import sys

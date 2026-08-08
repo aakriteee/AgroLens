@@ -1,22 +1,4 @@
-"""
-app.py
--------
-Main Flask server for AgroLens.
 
-Endpoints:
-  POST /api/auth/register   -> create a new user account
-  POST /api/auth/login      -> authenticate, returns JWT token
-  POST /api/scan            -> [auth required] upload a leaf image, get
-                                VGG16+SVM prediction back
-  GET  /api/history         -> [auth required] list past scans for the user
-  GET  /api/health          -> simple uptime check
-
-Run:
-    cd backend
-    pip install -r requirements.txt
-    python app.py
-Server starts on http://0.0.0.0:5000
-"""
 
 import os
 import jwt

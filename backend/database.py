@@ -1,16 +1,4 @@
-"""
-database.py
-------------
-Very small SQLite wrapper for AgroLens.
-Handles two tables:
-  - users        : stores registered farmers/app users
-  - scan_history : stores every leaf scan result per user
 
-SQLite is used here because it needs zero setup (no server, no
-credentials) which keeps the project easy to run from VS Code.
-For production you would swap this for Postgres/MySQL/Firebase,
-but the function signatures below would stay the same.
-"""
 
 import sqlite3
 import os

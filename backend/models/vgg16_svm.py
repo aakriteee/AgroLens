@@ -1,26 +1,5 @@
-"""
-vgg16_svm.py
--------------
-This is the heart of AgroLens' disease detection (proposal sections
-3.3.3 Feature Extraction and 3.3.4 Classification).
 
-Pipeline for ONE leaf image:
-    image -> VGG16 (feature extractor, no top layer) -> 512-d feature
-          -> trained SVM classifier -> class label + confidence
 
-VGG16 is used ONLY as a feature extractor here (include_top=False,
-pooling='avg'), not as an end-to-end classifier. Its convolution +
-pooling layers progressively extract hierarchical features (edges,
-textures, lesion patterns) exactly as described in the proposal.
-Those features are then handed to an SVM, which is what actually
-decides the disease class. This matches "VGG16 for feature
-classification, SVM for classification" from the brief.
-
-Usage:
-    from models.vgg16_svm import DiseaseDetector
-    detector = DiseaseDetector()
-    label, confidence, probs = detector.predict("path/to/leaf.jpg")
-"""
 
 import os
 import numpy as np

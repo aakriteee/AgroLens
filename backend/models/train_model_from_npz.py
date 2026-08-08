@@ -1,35 +1,5 @@
-"""
-train_model_from_npz.py
--------------------------
-Alternative to train_model.py -- use this instead if your dataset is
-already packaged as train_data.npz / val_data.npz (images + labels
-as numpy arrays) rather than a folder of individual image files.
 
-Expected input files (edit NPZ_DIR below if yours live elsewhere):
-    backend/dataset_npz/train_data.npz   -> keys: "images", "labels"
-    backend/dataset_npz/val_data.npz     -> keys: "images", "labels"
-    backend/dataset_npz/label_encoder.pkl  (optional, joblib-saved)
 
-Expected image array format: shape (N, 224, 224, 3), float32, values
-already scaled to the 0-1 range (i.e. original_pixel / 255). This is
-the common "cleaned/preprocessed" format many dataset-prep pipelines
-produce. If your arrays are a different scale or size, see the NOTE
-in `load_npz_split()` below.
-
-WHY A SEPARATE SCRIPT: the original train_model.py reads raw image
-files and applies VGG16's preprocess_input() during loading. Your
-images are already resized + rescaled to [0,1], so this script
-converts them back to the 0-255 range and applies the same
-preprocess_input() step, so the VGG16 features produced here are
-identical in kind to the ones produced at prediction time in
-models/vgg16_svm.py (that consistency is what keeps accuracy high --
-mismatched preprocessing between train and inference is one of the
-most common causes of a model that scores well in training but badly
-in the real app).
-
-Run from the backend/ folder:
-    python models/train_model_from_npz.py
-"""
 
 import os
 import sys
